@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+
+# Virtual environments
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Logs
+logs/
+*.log
+geckodriver.log
+
+# Downloads
+downloads/
+
+# Screenshots
+screenshots/
+
+# macOS
+.DS_Store
+
+# Backup files
+*.save
