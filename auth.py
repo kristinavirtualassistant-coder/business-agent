@@ -5,7 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from config import (
     LEADSIMPLE_EMAIL,
     LEADSIMPLE_PASSWORD,
-    TASKS_URL
+    LOGIN_URL,
+    DASHBOARD_URL,
 )
 
 
@@ -13,34 +14,30 @@ def login(driver):
 
     wait = WebDriverWait(driver, 60)
 
-    driver.get("https://app.leadsimple.com")
+    driver.get(LOGIN_URL)
 
     email = wait.until(
-        EC.visibility_of_element_located(
-            (By.ID, "email-address")
-        )
+        EC.visibility_of_element_located((By.ID, "email-address"))
     )
 
     email.clear()
     email.send_keys(LEADSIMPLE_EMAIL)
 
     password = driver.find_element(By.ID, "password")
-
     password.clear()
     password.send_keys(LEADSIMPLE_PASSWORD)
 
-    driver.find_element(
-        By.ID,
-        "login-btn"
-    ).click()
+    driver.find_element(By.ID, "login-btn").click()
 
     print("Logging in...")
 
     wait.until(
-        lambda d: "sign_in" not in d.current_url
+        EC.presence_of_element_located((By.ID, "root"))
     )
 
-    driver.get(TASKS_URL)
+    print("✓ Login successful")
+
+    driver.get(DASHBOARD_URL)
 
     wait.until(
         EC.presence_of_element_located(
@@ -48,4 +45,4 @@ def login(driver):
         )
     )
 
-    print("✓ Login successful")
+    print("✓ Tasks loaded")
