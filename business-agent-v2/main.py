@@ -31,6 +31,8 @@ def main():
     navigator = NavigationEngine(driver)
     navigator.analyze()
 
+    Logger.success("Interface learned.")
+
     input("\nPress ENTER to close browser...")
 
     browser.stop()

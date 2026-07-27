@@ -1,1 +1,57 @@
-{}
+{
+    "title": "LeadSimple | Login",
+    "url": "https://id.leadsimple.com/users/sign_in",
+    "page_type": "login",
+    "authentication": {
+        "email": {
+            "id": "email-address",
+            "name": "user[email]"
+        },
+        "password": {
+            "id": "password",
+            "name": "user[password]"
+        },
+        "submit": {
+            "text": "Log In",
+            "id": "login-btn"
+        }
+    },
+    "navigation": [],
+    "buttons": [
+        {
+            "text": "Log In",
+            "id": "login-btn",
+            "class": "auth-btn"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "hidden",
+            "id": "",
+            "name": "utf8",
+            "placeholder": ""
+        },
+        {
+            "type": "hidden",
+            "id": "",
+            "name": "authenticity_token",
+            "placeholder": ""
+        },
+        {
+            "type": "email",
+            "id": "email-address",
+            "name": "user[email]",
+            "placeholder": "you@example.com"
+        },
+        {
+            "type": "password",
+            "id": "password",
+            "name": "user[password]",
+            "placeholder": "Enter your password"
+        }
+    ],
+    "forms": [
+        {}
+    ],
+    "tables": []
+}
