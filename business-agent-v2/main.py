@@ -29,9 +29,11 @@ def main():
     discovery.scan()
 
     navigator = NavigationEngine(driver)
-    navigator.analyze()
 
-    Logger.success("Interface learned.")
+    report = navigator.analyze()
+
+    Logger.success(f"Discovered {len(report['links'])} links")
+    Logger.success("Website Intelligence Complete")
 
     input("\nPress ENTER to close browser...")
 

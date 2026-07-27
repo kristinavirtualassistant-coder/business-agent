@@ -2,56 +2,58 @@
     "title": "LeadSimple | Login",
     "url": "https://id.leadsimple.com/users/sign_in",
     "page_type": "login",
+    "confidence": 100,
     "authentication": {
-        "email": {
-            "id": "email-address",
-            "name": "user[email]"
-        },
-        "password": {
-            "id": "password",
-            "name": "user[password]"
-        },
-        "submit": {
-            "text": "Log In",
-            "id": "login-btn"
-        }
+        "email": "email-address",
+        "password": "password",
+        "submit": "login-btn"
+    },
+    "structure": {
+        "header": 0,
+        "footer": 1,
+        "nav": 0,
+        "aside": 0,
+        "section": 0,
+        "article": 0
     },
     "navigation": [],
-    "buttons": [
+    "headings": [
         {
-            "text": "Log In",
-            "id": "login-btn",
-            "class": "auth-btn"
+            "level": 1,
+            "text": "Log in"
         }
+    ],
+    "buttons": [
+        "Log In"
     ],
     "inputs": [
         {
             "type": "hidden",
             "id": "",
-            "name": "utf8",
-            "placeholder": ""
+            "name": "utf8"
         },
         {
             "type": "hidden",
             "id": "",
-            "name": "authenticity_token",
-            "placeholder": ""
+            "name": "authenticity_token"
         },
         {
             "type": "email",
             "id": "email-address",
-            "name": "user[email]",
-            "placeholder": "you@example.com"
+            "name": "user[email]"
         },
         {
             "type": "password",
             "id": "password",
-            "name": "user[password]",
-            "placeholder": "Enter your password"
+            "name": "user[password]"
         }
     ],
-    "forms": [
-        {}
-    ],
-    "tables": []
+    "dropdowns": 0,
+    "checkboxes": 0,
+    "radio_buttons": 0,
+    "textareas": 0,
+    "forms": 1,
+    "tables": 0,
+    "images": 1,
+    "iframes": 0
 }

@@ -4,17 +4,28 @@ from datetime import datetime
 class Logger:
 
     @staticmethod
-    def info(message):
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] INFO  {message}")
+    def _stamp():
+        return datetime.now().strftime("%H:%M:%S")
 
-    @staticmethod
-    def success(message):
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] OK    {message}")
+    @classmethod
+    def info(cls, message):
+        print(f"[{cls._stamp()}] INFO  {message}")
 
-    @staticmethod
-    def warning(message):
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] WARN  {message}")
+    @classmethod
+    def success(cls, message):
+        print(f"[{cls._stamp()}] OK    {message}")
 
-    @staticmethod
-    def error(message):
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] ERROR {message}")
+    @classmethod
+    def warning(cls, message):
+        print(f"[{cls._stamp()}] WARN  {message}")
+
+    @classmethod
+    def error(cls, message):
+        print(f"[{cls._stamp()}] ERROR {message}")
+
+    @classmethod
+    def section(cls, title):
+        print()
+        print("=" * 70)
+        print(title)
+        print("=" * 70)
