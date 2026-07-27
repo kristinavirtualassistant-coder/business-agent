@@ -11,7 +11,7 @@ from plugins.leadsimple.login import UniversalLoginAgent
 
 from config import (
     LEADSIMPLE_EMAIL,
-    LEADSIMPLE_PASSWORD
+    LEADSIMPLE_PASSWORD,
 )
 
 
@@ -22,7 +22,6 @@ def main():
     Logger.section("Business Agent v2")
 
     browser = Browser()
-
     driver = browser.start()
 
     recovery = RecoveryEngine()
@@ -34,9 +33,7 @@ def main():
 
     Logger.info(f"Opening {url}")
 
-    recovery.retry(
-        lambda: driver.get(url)
-    )
+    recovery.retry(lambda: driver.get(url))
 
     discovery = DiscoveryEngine(driver)
     discovery.scan()
@@ -44,16 +41,14 @@ def main():
     navigator = NavigationEngine(driver)
     navigator.analyze()
 
-    memory = MemoryEngine().load()
+    memory_engine = MemoryEngine()
+    memory = memory_engine.load()
 
     if memory["page_type"] == "login":
 
         Logger.success("Login page detected.")
 
-        login = UniversalLoginAgent(
-            driver,
-            memory
-        )
+        login = UniversalLoginAgent(driver, memory)
 
         login.login(
             LEADSIMPLE_EMAIL,
@@ -61,6 +56,16 @@ def main():
         )
 
         Logger.success("Agent authenticated.")
+
+        Logger.info("Discovering user permissions...")
+
+        permissions = discovery.discover_permissions()
+
+        memory_engine.save_permissions(permissions)
+
+        Logger.success(
+            f"Learned {len(permissions['navigation'])} accessible pages."
+        )
 
     else:
 
