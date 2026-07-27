@@ -1,1 +1,9 @@
-{}
+{
+    "logged_in": false,
+    "current_user": "",
+    "permissions": [],
+    "workspaces": [],
+    "applications": [],
+    "last_login": "",
+    "last_sync": ""
+}{}

@@ -15,6 +15,7 @@ from core.logger import Logger
 class Browser:
 
     def __init__(self):
+
         self.driver = None
 
     def start(self):
@@ -22,20 +23,26 @@ class Browser:
         Logger.info("Starting Firefox...")
 
         options = Options()
+
         options.binary_location = FIREFOX_BINARY
 
         if HEADLESS:
             options.add_argument("-headless")
 
-        service = Service(executable_path=GECKODRIVER)
+        service = Service(
+            executable_path=GECKODRIVER
+        )
 
         self.driver = webdriver.Firefox(
             service=service,
             options=options
         )
 
-        self.driver.set_page_load_timeout(PAGE_TIMEOUT)
         self.driver.maximize_window()
+
+        self.driver.set_page_load_timeout(
+            PAGE_TIMEOUT
+        )
 
         Logger.success("Firefox started")
 
