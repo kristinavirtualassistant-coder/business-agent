@@ -16,8 +16,20 @@ class UniversalLoginAgent:
 
         Logger.info("Waiting for successful login...")
 
+        # Wait until we're no longer on the original login page
         WebDriverWait(self.driver, 60).until(
             lambda d: d.current_url != self.memory["url"]
+        )
+
+        Logger.info("Waiting for LeadSimple application...")
+
+        # Wait until the OAuth redirect is finished
+        WebDriverWait(self.driver, 120).until(
+            lambda d:
+                d.execute_script("return document.readyState") == "complete"
+                and d.execute_script("return document.body !== null")
+                and "/v2" in d.current_url
+                and "response_type=" not in d.current_url
         )
 
         Logger.success("Login successful")

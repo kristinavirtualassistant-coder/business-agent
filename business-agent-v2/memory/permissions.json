@@ -1,9 +1,105 @@
 {
-    "logged_in": false,
-    "current_user": "",
-    "permissions": [],
-    "workspaces": [],
-    "applications": [],
-    "last_login": "",
-    "last_sync": ""
-}{}
+    "logged_in": true,
+    "software": "LeadSimple",
+    "workspace": "Tasks | LeadSimple",
+    "sidebar": [
+        "KM\nKristina Madrigal",
+        "Tasks",
+        "All Tasks\n1941",
+        "Standalone Tasks\n0",
+        "Leads",
+        "Property Management Leads",
+        "Signatures",
+        "Contacts",
+        "Properties",
+        "Reports",
+        "Library",
+        "Product Updates",
+        "Help Articles",
+        "Community",
+        "contact our support team"
+    ],
+    "top_navigation": [
+        "Go to your home page"
+    ],
+    "pages": [
+        {
+            "name": "KM\nKristina Madrigal",
+            "url": "https://app.leadsimple.com/v2/settings/users/XcZ87w9ddFnR4OWK_sP-PzbBoflEGc4_4geNmXCHCvY="
+        },
+        {
+            "name": "Tasks",
+            "url": "https://app.leadsimple.com/v2/tasks/XcZ87w9ddFnR4OWK_sP-PzbBoflEGc4_4geNmXCHCvY=?taskType=MANUAL&dueType=UPCOMING"
+        },
+        {
+            "name": "All Tasks\n1941",
+            "url": "https://app.leadsimple.com/v2/tasks/XcZ87w9ddFnR4OWK_sP-PzbBoflEGc4_4geNmXCHCvY=?taskType=MANUAL&dueType=UPCOMING"
+        },
+        {
+            "name": "Standalone Tasks\n0",
+            "url": "https://app.leadsimple.com/v2/tasks/XcZ87w9ddFnR4OWK_sP-PzbBoflEGc4_4geNmXCHCvY=?taskType=MANUAL&dueType=UPCOMING&standalone=true"
+        },
+        {
+            "name": "Leads",
+            "url": "https://app.leadsimple.com/v2/pipelines"
+        },
+        {
+            "name": "Property Management Leads",
+            "url": "https://app.leadsimple.com/v2/pipelines/WNxp-EwAKQXP5v3epI6rNmr4f5iiXv0cDXAhzlpU70vb6vA="
+        },
+        {
+            "name": "Signatures",
+            "url": "https://app.leadsimple.com/v2/signatures/documents"
+        },
+        {
+            "name": "Contacts",
+            "url": "https://app.leadsimple.com/v2/contacts"
+        },
+        {
+            "name": "Properties",
+            "url": "https://app.leadsimple.com/v2/properties"
+        },
+        {
+            "name": "Reports",
+            "url": "https://app.leadsimple.com/v2/pipelines/WNxp-EwAKQXP5v3epI6rNmr4f5iiXv0cDXAhzlpU70vb6vA=/reports/closed-business"
+        },
+        {
+            "name": "Library",
+            "url": "https://app.leadsimple.com/v2/library/public"
+        },
+        {
+            "name": "Product Updates",
+            "url": "https://leadsimple.canny.io/"
+        },
+        {
+            "name": "Help Articles",
+            "url": "http://training.leadsimple.com/"
+        },
+        {
+            "name": "Community",
+            "url": "https://leadsimple.circle.so/"
+        },
+        {
+            "name": "contact our support team",
+            "url": "mailto:support@leadsimple.com"
+        }
+    ],
+    "permissions": [
+        "All Tasks\n1941",
+        "Community",
+        "Contacts",
+        "Go to your home page",
+        "Help Articles",
+        "KM\nKristina Madrigal",
+        "Leads",
+        "Library",
+        "Product Updates",
+        "Properties",
+        "Property Management Leads",
+        "Reports",
+        "Signatures",
+        "Standalone Tasks\n0",
+        "Tasks",
+        "contact our support team"
+    ]
+}

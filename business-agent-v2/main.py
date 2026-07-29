@@ -5,6 +5,7 @@ from core.logger import Logger
 from engines.discovery import DiscoveryEngine
 from engines.navigation import NavigationEngine
 from engines.memory import MemoryEngine
+from engines.permissions import PermissionEngine
 from engines.recovery import RecoveryEngine
 
 from plugins.leadsimple.login import UniversalLoginAgent
@@ -48,7 +49,10 @@ def main():
 
         Logger.success("Login page detected.")
 
-        login = UniversalLoginAgent(driver, memory)
+        login = UniversalLoginAgent(
+            driver,
+            memory
+        )
 
         login.login(
             LEADSIMPLE_EMAIL,
@@ -57,14 +61,14 @@ def main():
 
         Logger.success("Agent authenticated.")
 
-        Logger.info("Discovering user permissions...")
+        permission_engine = PermissionEngine(driver)
 
-        permissions = discovery.discover_permissions()
+        permissions = permission_engine.discover()
 
         memory_engine.save_permissions(permissions)
 
         Logger.success(
-            f"Learned {len(permissions['navigation'])} accessible pages."
+            f"Learned {len(permissions['permissions'])} permissions."
         )
 
     else:

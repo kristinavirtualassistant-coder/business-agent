@@ -8,18 +8,14 @@ from core.logger import Logger
 class MemoryEngine:
 
     def __init__(self):
-        self.file = Path(MEMORY_DIR) / "selectors.json"
+        self.memory_file = Path(MEMORY_DIR) / "selectors.json"
+        self.permissions_file = Path(MEMORY_DIR) / "permissions.json"
 
     def load(self):
 
         Logger.info("Loading learned memory...")
 
-        with open(
-            self.file,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
+        with open(self.memory_file, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         Logger.success("Memory loaded")
@@ -28,34 +24,19 @@ class MemoryEngine:
 
     def save(self, data):
 
-        with open(
-            self.file,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
-            json.dump(
-                data,
-                f,
-                indent=4
-            )
+        with open(self.memory_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
 
         Logger.success("Memory updated")
 
-    def save_permissions(self, permissions):
+    def load_permissions(self):
 
-        file = Path(MEMORY_DIR) / "permissions.json"
+        with open(self.permissions_file, "r", encoding="utf-8") as f:
+            return json.load(f)
 
-        with open(
-            file,
-            "w",
-            encoding="utf-8"
-        ) as f:
+    def save_permissions(self, data):
 
-            json.dump(
-                permissions,
-                f,
-                indent=4
-            )
+        with open(self.permissions_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
 
         Logger.success("Permissions saved")
