@@ -8,7 +8,6 @@ from config import FIREFOX_BINARY, GECKODRIVER
 class Browser:
 
     def start(self):
-
         options = Options()
         options.binary_location = FIREFOX_BINARY
 

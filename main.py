@@ -1,7 +1,5 @@
-from agent import LeadSimpleAgent
+from agent import BrowserAgent
 
 if __name__ == "__main__":
-
-    agent = LeadSimpleAgent()
-
+    agent = BrowserAgent()
     agent.run()

@@ -3,17 +3,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from config import (
-    LEADSIMPLE_EMAIL,
-    LEADSIMPLE_PASSWORD,
-    TASKS_URL
+    APP_EMAIL,
+    APP_PASSWORD,
+    APP_URL,
+    TASKS_URL,
 )
 
 
 def login(driver):
-
     wait = WebDriverWait(driver, 60)
 
-    driver.get("https://app.leadsimple.com")
+    driver.get(APP_URL)
 
     email = wait.until(
         EC.visibility_of_element_located(
@@ -22,12 +22,12 @@ def login(driver):
     )
 
     email.clear()
-    email.send_keys(LEADSIMPLE_EMAIL)
+    email.send_keys(APP_EMAIL)
 
     password = driver.find_element(By.ID, "password")
 
     password.clear()
-    password.send_keys(LEADSIMPLE_PASSWORD)
+    password.send_keys(APP_PASSWORD)
 
     driver.find_element(
         By.ID,

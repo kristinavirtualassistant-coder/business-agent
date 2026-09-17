@@ -3,11 +3,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-LEADSIMPLE_EMAIL = os.getenv("LEADSIMPLE_EMAIL")
-LEADSIMPLE_PASSWORD = os.getenv("LEADSIMPLE_PASSWORD")
+APP_EMAIL = os.getenv("APP_EMAIL") or os.getenv("CRM_EMAIL")
+APP_PASSWORD = os.getenv("APP_PASSWORD") or os.getenv("CRM_PASSWORD")
+APP_URL = os.getenv("APP_URL", "https://app.example.com")
+TASKS_URL = os.getenv("TASKS_URL", os.getenv("WORK_QUEUE_URL", APP_URL))
 
-FIREFOX_BINARY = "/Applications/Firefox.app/Contents/MacOS/firefox"
-
-GECKODRIVER = "/Users/kristinamacbookpro/.wdm/drivers/geckodriver/mac64/v0.37.1/geckodriver"
-
-TASKS_URL = "https://app.leadsimple.com/v2/tasks/XcZ87w9ddFnR4OWK_sP-PzbBoflEGc4_4geNmXCHCvY=?taskType=MANUAL&dueType=UPCOMING"
+FIREFOX_BINARY = os.getenv("FIREFOX_BINARY", "/Applications/Firefox.app/Contents/MacOS/firefox")
+GECKODRIVER = os.getenv("GECKODRIVER", "/Users/you/.wdm/drivers/geckodriver/mac64/v0.37.1/geckodriver")

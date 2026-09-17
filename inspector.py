@@ -2,10 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 def inspect_page(driver):
     wait = WebDriverWait(driver, 30)
 
-    # Wait until React finishes rendering
     wait.until(
         lambda d: d.execute_script(
             "return document.querySelector('#root')?.innerText.length > 100"

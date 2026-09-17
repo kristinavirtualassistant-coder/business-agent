@@ -3,16 +3,13 @@ from auth import login
 from navigator import Navigator
 
 
-class LeadSimpleAgent:
+class BrowserAgent:
 
     def __init__(self):
-
         self.browser = Browser()
-
         self.driver = None
 
     def run(self):
-
         self.driver = self.browser.start()
 
         login(self.driver)
@@ -21,7 +18,7 @@ class LeadSimpleAgent:
 
         nav.print_tasks()
 
-        input("\nPress ENTER to open first contact...")
+        input("\nPress ENTER to open first item...")
 
         nav.open_task(0)
 
